@@ -40,35 +40,6 @@ elif a == 7:
 else:
     print("Invalid input")
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # if a == 1:
 #     print("Monday")
     
