@@ -14,7 +14,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS products
 # Create the main window
 root = tk.Tk()
 root.title("Inventory Management System")
-root.state('zoomed')  # Open maximized
+root.state('normal')  # Open maximized; was zoomed
 root.configure(bg="#EAEDED")  # Light grey background color
 
 # Create a frame for input fields
