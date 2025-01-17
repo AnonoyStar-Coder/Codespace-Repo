@@ -1,0 +1,23 @@
+#
+# ~/.bashrc
+#
+
+export PATH=$PATH:/home/balraj/.local/bin:/home/balraj/.cargo/bin
+source ~/.api_keys
+export OPENAI_MODEL="gpt-4o-mini"
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export $EDITOR=vim
+
+#if [[ $TERM == tmux-256color ]]; then
+#	clear;
+#else
+#	tmux && exit
+#fi
+
+source ~/.bash_aliases
+
+#PS1='[\u@\h \W]\$ '
+#eval "$(oh-my-posh init bash --config ~/.custom.omp.json)"
