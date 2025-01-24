@@ -1,0 +1,192 @@
+﻿Diagnose log at 2025-01-24T06:09:36Z
+
+AppPath: /usr/bin/git-credential-manager
+InstallDir: /usr/lib/share/git-credential-manager/
+Version: 2.6.0+dc660756c04752490e10c06d572579304f7d7f85
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Linux
+OSVersion: Arch Linux
+Reading environment variables... OK
+ Variables:
+KITTY_PUBLIC_KEY=1:8lN>?me$W<5;KYXNMQlyr;fKx8iouR?FQbgL*0{2
+SDL_VIDEODRIVER=wayland
+XDG_SESSION_DESKTOP=Hyprland
+TERMINFO=/usr/lib/kitty/terminfo
+EDITOR=nvim
+_JAVA_AWT_WM_NONREPARENTING=1
+XDG_SESSION_ID=2
+LOGNAME=balraj
+PWD=/home/balraj/Codespace-Repo
+OSTYPE=linux-gnu
+_=/usr/bin/git-credential-manager
+NVM_CD_FLAGS=-q
+MOZ_ENABLE_WAYLAND=1
+LSCOLORS=Gxfxcxdxbxegedabagacad
+KITTY_WINDOW_ID=1
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+POSH_SESSION_ID=57f64e2c-57a0-4c5e-bbcc-250d87919918
+OLDPWD=/home/balraj
+PAM_KWALLET5_LOGIN=/run/user/1000/kwallet5.socket
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+MOTD_SHOWN=pam
+GDK_BACKEND=wayland,x11,*
+DISPLAY=:1
+NVM_DIR=/home/balraj/.nvm
+HL_INITIAL_WORKSPACE_TOKEN=a97a0b5a-e42b-445d-bfe2-1de66e3ac7a1
+WAYLAND_DISPLAY=wayland-1
+APPIMAGELAUNCHER_DISABLE=1
+LANG=en_US.UTF-8
+KITTY_PID=33573
+COLORTERM=truecolor
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+XDG_SEAT=seat0
+XDG_CURRENT_DESKTOP=Hyprland
+TERM=xterm-kitty
+ZLE_RPROMPT_INDENT=0
+XDG_SESSION_CLASS=user
+HYPRLAND_INSTANCE_SIGNATURE=0bd541f2fd902dbfa04c3ea2ccf679395e316887_1737695837_1067877116
+SHLVL=2
+POSH_THEME=/home/balraj/.config/ohmyposh/EDM115-newline.omp.json
+HOME=/home/balraj
+CONDA_PROMPT_MODIFIER=false
+XDG_SESSION_TYPE=wayland
+HYPRLAND_CMD=Hyprland
+POSH_SHELL=zsh
+OZONE_PLATFORM=wayland
+NVM_INC=/home/balraj/.nvm/versions/node/v22.13.1/include/node
+POSH_SHELL_VERSION=5.9
+POWERLINE_COMMAND=oh-my-posh
+PAGER=more
+CLUTTER_BACKEND=wayland
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+DEBUGINFOD_URLS=https://debuginfod.archlinux.org 
+MAIL=/var/spool/mail/balraj
+NVM_BIN=/home/balraj/.nvm/versions/node/v22.13.1/bin
+XDG_BACKEND=wayland
+VIRTUAL_ENV_DISABLE_PROMPT=1
+ZSH=/home/balraj/.oh-my-zsh
+QT_QPA_PLATFORM=wayland;xcb
+USER=balraj
+DESKTOP_SESSION=hyprland
+KITTY_INSTALLATION_DIR=/usr/lib/kitty
+QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+PYENV_VIRTUALENV_DISABLE_PROMPT=1
+QT_QPA_PLATFORMTHEME=qt5ct
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+XCURSOR_SIZE=24
+PATH=/home/balraj/.nvm/versions/node/v22.13.1/bin:/usr/lib/ccache/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/balraj/.cargo/bin
+DIRHISTORY_SIZE=30
+ELECTRON_OZONE_PLATFORM_HINT=wayland
+GIT_TRACE2_PARENT_SID=b1b00112-95c9-4096-85c7-28980ec1b909
+XDG_RUNTIME_DIR=/run/user/1000
+GDK_SCALE=1
+XDG_VTNR=1
+SHELL=/usr/bin/zsh
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is '/tmp/'...
+Checking basic file I/O...
+Writing to temporary file '/tmp/fef8416f9395b3e0881e80b2'... OK
+Reading from temporary file '/tmp/fef8416f9395b3e0881e80b2'... OK
+Deleting temporary file '/tmp/fef8416f9395b3e0881e80b2'... OK
+Testing IFileSystem instance...
+UserHomePath: /home/balraj
+UserDataDirectoryPath: /home/balraj/.gcm
+GetCurrentDirectory(): /home/balraj/Codespace-Repo
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:37983/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.48.1'
+Locating current repository...Git repository at '/home/balraj/Codespace-Repo/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:/home/balraj/.gitconfig	user.email=anonystargamerz@gmail.com
+file:/home/balraj/.gitconfig	user.name=AnonoyStar-Coder
+file:/home/balraj/.gitconfig	credential.credentialstore=cache
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=true
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	remote.origin.url=https://github.com/AnonoyStar-Coder/Codespace-Repo
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: /home/balraj/.local/.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: /home/balraj/.local/.IdentityService/msal.cache
+KeyringCollection: 
+KeyringSchemaName: 
+KeyringSecretLabel: 
+KeyringAttribute1: (,)
+KeyringAttribute2: (,)
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+
