@@ -23,7 +23,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'morhetz/gruvbox'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -33,7 +33,7 @@ Plug 'mhinz/vim-startify'
 call plug#end()
 
 set background=dark
-colorscheme gruvbox
+colorscheme catppuccin_mocha
 
 let mapleader = " "
 
