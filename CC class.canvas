@@ -1,0 +1,35 @@
+{
+	"nodes":[
+		{"id":"3a6b99fd5c5dccb8","type":"group","x":-3160,"y":-760,"width":1680,"height":1120,"color":"5","label":"Cloud Computing Timeline"},
+		{"id":"937060fbd0aa62d4","type":"group","x":-1360,"y":-1000,"width":880,"height":1480,"color":"2","label":"Types of Servers"},
+		{"id":"848d5b71475336b0","x":-2180,"y":540,"width":720,"height":220,"color":"3","type":"group","label":"Untitled group"},
+		{"id":"9a2ba30c20293280","type":"text","text":"# On-Premise Server: \n# 1. Bring your own machines, connectivity, software, etc.\n\n# 2. Complete Control\n\n# 3. Complete responsibility\n\n# 4. Static capabilities\n\n# 5. Upfront Capital cost for the infrastructure.\n\n\n# *--Advantages--*\n# 1. data storage\n# 2. application\n# 3. main server\n","x":-1345,"y":-980,"width":845,"height":528,"color":"6"},
+		{"id":"4eca7ff03d5054ff","type":"text","text":"# IBM- Mainframe (1960 - 70)","x":-3128,"y":-732,"width":404,"height":99,"color":"3"},
+		{"id":"e89f15ae8c684f21","type":"text","text":"# Cloud Computing- (salesforce.com / Amazon / Google / etc)","x":-3128,"y":192,"width":404,"height":140,"color":"3"},
+		{"id":"dbe5313c839507ef","type":"text","text":"# Nokia- Mobile Devices (2001 - 2008)","x":-2724,"y":52,"width":404,"height":112,"color":"3"},
+		{"id":"c5a4b433494cf7d0","type":"text","text":"# DEC- (Digital Equipment Corporation) Minicomputer (1980 - 85)","x":-2708,"y":-620,"width":404,"height":168,"color":"3"},
+		{"id":"bd1f03278fff55f9","type":"text","text":"# Intel- PCs (1985 - 90)","x":-2320,"y":-396,"width":404,"height":84,"color":"3"},
+		{"id":"8f8f2e4bffe449ad","type":"text","text":"# Cisco- IP Networks (1990 - 2000)","x":-2320,"y":-88,"width":404,"height":112,"color":"3"},
+		{"id":"8473c473b27d9352","type":"text","text":"# Microsoft || Sun- (Client - Server)","x":-1916,"y":-256,"width":404,"height":112,"color":"3"},
+		{"id":"4b41280d0856da11","type":"text","text":"# Hosted Server: \n\n# 1. Renting machines, connectivity, software.\n\n# 2. Less control.\n\n# 3. Fewer Responsibilities.\n\n# 4. Lower capital cost.\n\n# 5. More flexible.\n\n# 6. Pay for fixed capacity, even for idle-time.","x":-1345,"y":-396,"width":845,"height":400,"color":"6"},
+		{"id":"5f269e569e4a76f7","type":"text","text":"# Cloud Platform:\n\n# 1. Shared, multi-tenant infrastructure.\n\n# 2. Virtualised & dynamic.\n\n# 3. Scalable & available.\n\n# 4. Abstracted from the infrastructure.\n\n# 5. Higher-level services.\n\n# 6. Pay-as-you-go.","x":-1345,"y":52,"width":845,"height":380,"color":"6"},
+		{"id":"c41f493b716596fa","x":-2160,"y":560,"width":250,"height":63,"type":"text","text":"# Application"},
+		{"id":"ac7df82f5f8803ef","x":-2160,"y":680,"width":250,"height":60,"type":"text","text":"# Storage"},
+		{"id":"6815585e9d7fb08a","x":-1740,"y":623,"width":260,"height":57,"type":"text","text":"# Infrastructure"}
+	],
+	"edges":[
+		{"id":"6cd6b497a0457786","fromNode":"4eca7ff03d5054ff","fromSide":"bottom","toNode":"c5a4b433494cf7d0","toSide":"left"},
+		{"id":"28cf478d56736f52","fromNode":"c5a4b433494cf7d0","fromSide":"bottom","toNode":"bd1f03278fff55f9","toSide":"left"},
+		{"id":"e814569efa185c6c","fromNode":"bd1f03278fff55f9","fromSide":"bottom","toNode":"8473c473b27d9352","toSide":"left"},
+		{"id":"e83cec0dbd4f843a","fromNode":"8473c473b27d9352","fromSide":"bottom","toNode":"8f8f2e4bffe449ad","toSide":"right"},
+		{"id":"674f5f39608f17fe","fromNode":"8f8f2e4bffe449ad","fromSide":"bottom","toNode":"dbe5313c839507ef","toSide":"right"},
+		{"id":"ba657b06d0314f44","fromNode":"dbe5313c839507ef","fromSide":"bottom","toNode":"e89f15ae8c684f21","toSide":"right"},
+		{"id":"d8b2010c9b0172e4","fromNode":"9a2ba30c20293280","fromSide":"bottom","toNode":"4b41280d0856da11","toSide":"top"},
+		{"id":"3ff3c1a460125a99","fromNode":"3a6b99fd5c5dccb8","fromSide":"right","toNode":"9a2ba30c20293280","toSide":"left"},
+		{"id":"f22c8b53ce6d3c9b","fromNode":"8473c473b27d9352","fromSide":"right","toNode":"4b41280d0856da11","toSide":"left"},
+		{"id":"f20ed67d7d5fa44f","fromNode":"4b41280d0856da11","fromSide":"bottom","toNode":"5f269e569e4a76f7","toSide":"top"},
+		{"id":"98b1d288c041a100","fromNode":"8473c473b27d9352","fromSide":"right","toNode":"5f269e569e4a76f7","toSide":"left"},
+		{"id":"b0a72044fd6471d6","fromNode":"c41f493b716596fa","fromSide":"right","toNode":"6815585e9d7fb08a","toSide":"left","fromEnd":"arrow"},
+		{"id":"1f20a911e53741ff","fromNode":"6815585e9d7fb08a","fromSide":"left","toNode":"ac7df82f5f8803ef","toSide":"right","fromEnd":"arrow"}
+	]
+}
