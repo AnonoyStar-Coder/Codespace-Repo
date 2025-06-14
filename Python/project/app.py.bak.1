@@ -1,0 +1,108 @@
+from flask import Flask, request, jsonify, session, redirect, url_for, send_from_directory
+import os
+import json
+from datetime import datetime
+import secrets
+from werkzeug.utils import secure_filename
+import openai
+
+app = Flask(__name__, static_folder='dist', static_url_path='')
+app.secret_key = secrets.token_hex(16)
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max upload
+
+# Set up OpenAI API key - in production, use environment variables
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "your-api-key-here"
+
+# Ensure upload directory exists
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+# In-memory storage for demo purposes - in production use a database
+RESUMES = {}
+
+# Serve built React frontend directly
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/api/resume', methods=['GET', 'POST'])
+def handle_resume():
+    resume_id = session.get('resume_id')
+    if not resume_id:
+        # generate resume_id for new session
+        session['resume_id'] = secrets.token_hex(8)
+        resume_id = session['resume_id']
+        RESUMES[resume_id] = {
+            'personal': {
+                'name': '',
+                'email': '',
+                'phone': '',
+                'location': '',
+                'website': '',
+                'summary': '',
+                'title': '',
+                'profilePicture': None
+            },
+            'experience': [],
+            'education': [],
+            'skills': [],
+            'projects': [],
+            'template': 'modern',
+            'created_at': datetime.now().isoformat()
+        }
+
+    if request.method == 'GET':
+        return jsonify(RESUMES.get(resume_id, {}))
+
+    if request.method == 'POST':
+        data = request.get_json()
+        RESUMES[resume_id] = data
+        RESUMES[resume_id]['updated_at'] = datetime.now().isoformat()
+        return jsonify({'status': 'success', 'resume_id': resume_id})
+
+@app.route('/api/ai/suggest', methods=['POST'])
+def ai_suggest():
+    data = request.get_json()
+    section = data.get('section')
+    context = data.get('context', '')
+
+    # For demo purposes - in production, use actual OpenAI API call
+    suggestions = generate_ai_suggestions(section, context)
+
+    return jsonify({'suggestions': suggestions})
+
+@app.route('/export/pdf')
+def export_pdf():
+    # This would generate a PDF in production
+    return jsonify({'status': 'success', 'message': 'PDF would be generated here'})
+
+def generate_ai_suggestions(section, context):
+    suggestions = []
+    if section == 'experience':
+        suggestions = [
+            "Led cross-functional team of 8 engineers in developing and launching a new e-commerce platform, resulting in 45% increase in online sales",
+            "Implemented automated testing framework reducing QA time by 60% and improving code coverage to 95%",
+            "Architected and deployed microservices infrastructure supporting 1M+ daily active users with 99.99% uptime"
+        ]
+    elif section == 'skills':
+        suggestions = [
+            "Full Stack Development (React, Node.js, Python)",
+            "Cloud Architecture (AWS, Azure, GCP)",
+            "Machine Learning & AI (TensorFlow, PyTorch, scikit-learn)"
+        ]
+    elif section == 'summary':
+        suggestions = [
+            "Results-driven technology leader with 8+ years of experience in building scalable web applications and leading high-performance engineering teams",
+            "Innovative software architect specializing in cloud-native solutions with a track record of delivering enterprise-scale projects on time and under budget",
+            "Forward-thinking engineering manager combining technical expertise with strong business acumen to drive digital transformation initiatives"
+        ]
+    return suggestions
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
