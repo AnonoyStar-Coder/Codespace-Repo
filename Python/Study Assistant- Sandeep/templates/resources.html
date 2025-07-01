@@ -1,0 +1,101 @@
+<!-- Pink Dashboard-Themed Resources Page with White Sidebar and Gradient Background -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Study Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fff, #fcb69f);
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            color: #000000;
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding-top: 2rem;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            color: #000000;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #ffe6f0;
+            color: #fcb69f;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        h1 {
+            color: #fcb69f;
+            margin-bottom: 1.5rem;
+        }
+
+        .resources-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        a.resource-link {
+            color: #fcb69f;
+            text-decoration: none;
+        }
+
+        a.resource-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="notes"><i class="fas fa-sticky-note"></i> Notes</a>
+        <a href="planner"><i class="fas fa-calendar-alt"></i> Planner</a>
+        <a href="reminders"><i class="fas fa-bell"></i> Reminders</a>
+        <a href="resources"><i class="fas fa-book"></i> Resources</a>
+    </div>
+    <div class="main-content">
+        <h1><i class="fas fa-book"></i> Study Resources</h1>
+        <div class="resources-container">
+            <ul>
+                <li><a class="resource-link" href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Free online courses and tutorials</li>
+                <li><a class="resource-link" href="https://www.coursera.org/" target="_blank">Coursera</a> - University-level courses</li>
+                <li><a class="resource-link" href="https://www.edx.org/" target="_blank">edX</a> - Online courses from top institutions</li>
+                <li><a class="resource-link" href="https://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a> - Programming resources and tutorials</li>
+                <li><a class="resource-link" href="https://www.w3schools.com/" target="_blank">W3Schools</a> - Web development tutorials</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

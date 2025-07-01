@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Study Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            height: 100vh;
+            padding-top: 2rem;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .sidebar a i {
+            margin-right: 1rem;
+        }
+
+        .sidebar a:hover {
+            background-color: #fcb69f;
+            color: white;
+        }
+
+        .main {
+            margin-left: 250px;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-widgets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .widget:hover {
+            transform: translateY(-5px);
+        }
+
+        .widget i {
+            font-size: 1.5rem;
+            color: #ff7e5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .widget h2 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="planner"><i class="fas fa-calendar-alt"></i> Planner</a>
+        <a href="reminders"><i class="fas fa-bell"></i> Reminders</a>
+        <a href="notes"><i class="fas fa-sticky-note"></i> Notes</a>
+        <a href="resources"><i class="fas fa-book"></i> Resources</a>
+    </div>
+
+    <div class="main">
+        <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+        <div class="dashboard-widgets">
+            <div class="widget">
+                <i class="fas fa-book-reader"></i>
+                <h2>Today's Plan</h2>
+            </div>
+            <div class="widget">
+                <i class="fas fa-tasks"></i>
+                <h2>Tasks</h2>
+            </div>
+            <div class="widget">
+                <i class="fas fa-bell"></i>
+                <h2>Reminders</h2>
+            </div>
+            <div class="widget">
+                <i class="fas fa-lightbulb"></i>
+                <h2>Study Tips</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
