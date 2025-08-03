@@ -1,0 +1,169 @@
+
+#! /usr/bin/env python
+
+# from textual.app import App, ComposeResult
+# from textual.widgets import Header, Footer, Button, Input, Label, Checkbox, Static
+# from textual.containers import Container, Vertical
+# import requests
+# 
+# 
+# SERVERS = {
+#     "ntfy.sh": "https://ntfy.sh",
+#     "chaco-vibes": "https://ntfy.chaco-vibes.ts.net",
+#     "custom": "https://my.custom.ntfy.server"
+# }
+# 
+# 
+# class NtfyApp(App):
+# 
+#     CSS = """
+#     Screen {
+#         align: center middle;
+#         padding: 1;
+#     }
+#     Input, Button, Checkbox {
+#         width: 60%;
+#         margin: 1 0;
+#     }
+#     """
+# 
+#     def compose(self) -> ComposeResult:
+#         yield Header()
+#         yield Label("🚀 ntfytui — Terminal Notification Blaster 🚀", id="title")
+#         with Container():
+#             for name in SERVERS:
+#                 yield Checkbox(name)
+#             yield Input(placeholder="Topic", id="topic")
+#             yield Input(placeholder="Title (optional)", id="title")
+#             yield Input(placeholder="Message", id="message", password=False)
+#             yield Button("Send", id="send_button")
+#             yield Static("", id="status")
+#         yield Footer()
+# 
+#     async def on_button_pressed(self, event: Button.Pressed) -> None:
+#         if event.button.id == "send_button":
+#             # Get inputs
+#             topic = self.query_one("#topic", Input).value.strip()
+#             title = self.query_one("#title", Input).value.strip()
+#             message = self.query_one("#message", Input).value.strip()
+#             status = self.query_one("#status", Static)
+# 
+#             if not topic or not message:
+#                 status.update("⚠️ Topic and Message are required.")
+#                 return
+# 
+#             # Get selected servers
+#             selected_servers = []
+#             for checkbox in self.query(Checkbox):
+#                 if checkbox.value:
+#                     selected_servers.append(SERVERS.get(checkbox.label))
+# 
+#             if not selected_servers:
+#                 status.update("⚠️ No servers selected.")
+#                 return
+# 
+#             # Build headers
+#             headers = {}
+#             if title:
+#                 headers["X-Title"] = title
+# 
+#             # Send message
+#             output = []
+#             for server in selected_servers:
+#                 url = f"{server.rstrip('/')}/{topic}"
+#                 try:
+#                     response = requests.post(
+#                         url,
+#                         data=message.encode("utf-8"),
+#                         headers=headers,
+#                         timeout=5
+#                     )
+#                     output.append(f"✅ Sent to {url} ({response.status_code})")
+#                 except requests.exceptions.RequestException as e:
+#                     output.append(f"❌ Error sending to {url}: {e}")
+# 
+#             status.update("\n".join(output))
+# 
+# 
+# if __name__ == "__main__":
+#     NtfyApp().run()
+# 
+
+# import urwid
+# import requests
+# 
+# # Define your servers
+# SERVERS = {
+#     "ntfy.sh": "https://ntfy.sh",
+#     "chaco-vibes": "https://ntfy.chaco-vibes.ts.net",
+#     "custom": "https://my.custom.ntfy.server"
+# }
+# 
+# checkboxes = []
+# topic_edit = urwid.Edit(('bold', "Topic: "))
+# title_edit = urwid.Edit(('bold', "Title (optional): "))
+# message_edit = urwid.Edit(('bold', "Message: "))
+# status_text = urwid.Text("")
+# 
+# def on_send_clicked(button):
+#     topic = topic_edit.edit_text.strip()
+#     title = title_edit.edit_text.strip()
+#     message = message_edit.edit_text.strip()
+# 
+#     if not topic or not message:
+#         status_text.set_text("⚠️ Topic and Message are required.")
+#         return
+# 
+#     selected = [SERVERS[name] for checkbox, name in checkboxes if checkbox.get_state()]
+#     if not selected:
+#         status_text.set_text("⚠️ No servers selected.")
+#         return
+# 
+#     headers = {}
+#     if title:
+#         headers["X-Title"] = title
+# 
+#     result = []
+#     for server in selected:
+#         url = f"{server.rstrip('/')}/{topic}"
+#         try:
+#             r = requests.post(url, data=message.encode('utf-8'), headers=headers, timeout=5)
+#             result.append(f"✅ {url} [{r.status_code}]")
+#         except requests.exceptions.RequestException as e:
+#             result.append(f"❌ {url} - {e}")
+#     
+#     status_text.set_text("\n".join(result))
+# 
+# 
+# def main():
+#     # Server checkboxes
+#     server_widgets = []
+#     for name in SERVERS:
+#         checkbox = urwid.CheckBox(name)
+#         checkboxes.append((checkbox, name))
+#         server_widgets.append(urwid.AttrMap(checkbox, None, focus_map='reversed'))
+# 
+#     # Send button
+#     send_button = urwid.Button("Send")
+#     urwid.connect_signal(send_button, 'click', on_send_clicked)
+# 
+#     pile = urwid.Pile(
+#         server_widgets +
+#         [urwid.Divider("-"),
+#          topic_edit,
+#          title_edit,
+#          message_edit,
+#          urwid.Divider(),
+#          urwid.AttrMap(send_button, None, focus_map='reversed'),
+#          urwid.Divider(),
+#          status_text]
+#     )
+# 
+#     layout = urwid.Padding(pile, left=2, right=2)
+#     top = urwid.Filler(layout, valign='top')
+#     loop = urwid.MainLoop(top, palette=[('reversed', 'standout', '')])
+#     loop.run()
+# 
+# if __name__ == '__main__':
+#     main()
+

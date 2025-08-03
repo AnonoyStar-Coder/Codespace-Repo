@@ -1,0 +1,118 @@
+#! /usr/bin/env python
+
+import urwid
+import requests
+
+SERVERS = {
+    "ntfy.sh": "https://ntfy.sh",
+    "chaco-vibes": "https://ntfy.chaco-vibes.ts.net",
+    "custom": "https://my.custom.ntfy.server"
+}
+
+checkboxes = []
+topic_edit = urwid.Edit(('label', "📌 Topic: "))
+title_edit = urwid.Edit(('label', "📝 Title (optional): "))
+message_edit = urwid.Edit(('label', "💬 Message: "))
+status_text = urwid.Text("")
+status_box = urwid.LineBox(status_text, title="📡 Status")
+
+def on_send_clicked(button):
+    topic = topic_edit.edit_text.strip()
+    title = title_edit.edit_text.strip()
+    message = message_edit.edit_text.strip()
+
+    if not topic or not message:
+        status_text.set_text("⚠️ Topic and Message are required.")
+        return
+
+    selected = [SERVERS[name] for checkbox, name in checkboxes if checkbox.get_state()]
+    if not selected:
+        status_text.set_text("⚠️ No servers selected.")
+        return
+
+    headers = {}
+    if title:
+        headers["X-Title"] = title
+
+    result = []
+    for server in selected:
+        url = f"{server.rstrip('/')}/{topic}"
+        try:
+            r = requests.post(url, data=message.encode('utf-8'), headers=headers, timeout=5)
+            result.append(('success', f"✅ {url} [{r.status_code}]"))
+        except requests.exceptions.RequestException as e:
+            result.append(('error', f"❌ {url} - {e}"))
+
+    styled_output = [("success" if tag == 'success' else "error", line) for tag, line in result]
+    status_text.set_text(styled_output)
+
+
+def on_exit_clicked(button):
+    raise urwid.ExitMainLoop()
+
+
+def main():
+    # Checkboxes with server names
+    server_widgets = []
+    for name in SERVERS:
+        checkbox = urwid.CheckBox(name)
+        checkboxes.append((checkbox, name))
+        server_widgets.append(urwid.AttrMap(checkbox, None, focus_map='selected'))
+
+    server_box = urwid.LineBox(
+        urwid.Pile(server_widgets),
+        title="🌍 Select Servers"
+    )
+
+    # Input box section
+    input_box = urwid.LineBox(
+        urwid.Pile([
+            topic_edit,
+            title_edit,
+            message_edit
+        ]),
+        title="✏️ Compose Message"
+    )
+
+    # Buttons
+    send_button = urwid.Button("🚀 Send")
+    exit_button = urwid.Button("❌ Exit")
+    urwid.connect_signal(send_button, 'click', on_send_clicked)
+    urwid.connect_signal(exit_button, 'click', on_exit_clicked)
+
+    buttons = urwid.Columns([
+        urwid.AttrMap(send_button, 'button', focus_map='selected'),
+        urwid.AttrMap(exit_button, 'exit', focus_map='selected')
+    ], dividechars=2)
+
+    # Layout
+    main_layout = urwid.Pile([
+        urwid.Text(('title', "ntfytui — Terminal Notification Blaster"), align='center'),
+        urwid.Divider("─"),
+        urwid.Columns([server_box, input_box], dividechars=2),
+        urwid.Divider(),
+        buttons,
+        urwid.Divider(),
+        status_box
+    ])
+
+    frame = urwid.Padding(main_layout, left=2, right=2)
+    top = urwid.Filler(frame, valign='top')
+
+    palette = [
+        ('title', 'bold,underline', ''),
+        ('label', 'light cyan', ''),
+        ('button', 'black', 'dark green'),
+        ('exit', 'black', 'dark red'),
+        ('selected', 'standout', ''),
+        ('success', 'light green', ''),
+        ('error', 'light red', '')
+    ]
+
+    loop = urwid.MainLoop(top, palette)
+    loop.run()
+
+
+if __name__ == '__main__':
+    main()
+
