@@ -3,6 +3,7 @@
 int BinarySearch(int arr[], int left, int right, int key) {
 
     while (left <= right) {
+        
         int mid = left + (right - left) / 2;
 
         if (arr[mid] == key) {
